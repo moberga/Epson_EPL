@@ -1,0 +1,35 @@
+* Prerequisites
+** Drivers
+Download the drivers from
+https://www.openprinting.org/driver/epsonepl
+and extract
+(filename: epsoneplijs-0.4.1.tgz)
+** Programs
+- foomatic-db-engine
+- cups
+  
+* Setup
+
+#+begin_src bash
+$   cd epsoneplijs-0.4.1/;
+    ./configure;
+    make;
+\#  make install;
+#+end_src
+  
+#+begin_src bash
+\# mkdir -p /usr/share/cups/model/foomatic-ppds/Epson/
+#+end_src
+
+Move the file ~custom_foomatic_2023.sh~ to the ~foomatic-scripts~ directory
+
+#+begin_src bash
+\#  cd foomatic-scripts/
+    ./custom_foomatic_2023.sh
+#+end_src
+
+#+begin_src bash
+\# ln -s $(which ijs_server_epsonepl) /usr/bin/
+#+end_src
+
+Now you can add the printer and print a test page.
