@@ -1,3 +1,4 @@
+#+OPTIONS: #:nil
 * Installation of Epson EPL 6200L (and 5800L, 5900L, 6100L) on linux
 ** Prerequisites
 *** Drivers
@@ -15,22 +16,22 @@ and extract
 $   cd epsoneplijs-0.4.1/;
     ./configure;
     make;
-#  make install;
+\#  make install;
 #+end_src
   
 #+begin_src bash
-# mkdir -p /usr/share/cups/model/foomatic-ppds/Epson/
+\# mkdir -p /usr/share/cups/model/foomatic-ppds/Epson/
 #+end_src
 
-Move the file ~custom_foomatic_2023.sh~ to the ~foomatic-scripts~ directory
+Move the file ~custom_install_2023.sh~ to the ~foomatic-scripts~ directory
 
 #+begin_src bash
-#  cd foomatic-scripts/
-    ./custom_foomatic_2023.sh
+\#  cd foomatic-scripts/
+    ./custom_install_2023.sh
 #+end_src
 
 #+begin_src bash
-# ln -s $(which ijs_server_epsonepl) /usr/bin/
+\# ln -s $(which ijs_server_epsonepl) /usr/bin/
 #+end_src
 
 Now you can add the printer and print a test page.
